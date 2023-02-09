@@ -1,0 +1,23 @@
+    <h3 class="text-center m-3">Discos de vinilo<span><img src="https://3.bp.blogspot.com/-tVjWYlEZzKs/WOry40469OI/AAAAAAAAJxk/zUfHvzPZ6n4Tqbv8dqNhqO824tWEJBB9gCLcB/s1600/Disco-de-vinilo-gratis.png" width="50" alt="" class="ms-2"></span></h3>
+    <div class="w-50 mx-auto border p-3">
+    <label class="form-label">Nombre:</label>
+    <input type="text" class="form-control" placeholder="Nombre" [(ngModel)]="vinilo.nombre">
+    <label class="form-label">Artista:</label>
+    <input type="text" class="form-control" placeholder="Artista" [(ngModel)]="vinilo.artista">
+    <label class="form-label">Año:</label>
+    <input type="text" class="form-control" placeholder="Año" [(ngModel)]="vinilo.year">
+    <label class="form-label">Sello discográfico:</label>
+    <input type="text" class="form-control" placeholder="Sello discográfico" [(ngModel)]="vinilo.selloDiscografico">
+    <label>Tipo:</label>
+    <select class="form-control" [(ngModel)]="vinilo.tipoVinilo">
+        <option *ngFor="let tipo of tipos" value="{{tipo.id}}">{{tipo.descripcion}}</option>
+    </select>
+    <label>Velocidad:</label>
+    <select class="form-control" [(ngModel)]="vinilo.velocidad">
+        <option *ngFor="let velocidad of velocidades" value="{{velocidad.id}}">{{velocidad.velocidad}}</option>
+    </select>
+
+    <div class="d-flex justify-content-center">
+        <button type="button" class="btn btn-dark w-25 mt-2" (click) = "this.insertarVinilo()"><strong>Agregar</strong></button>
+    </div>
+</div>
